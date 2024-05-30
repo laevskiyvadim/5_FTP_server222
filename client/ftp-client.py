@@ -17,7 +17,7 @@ def save_file(file_name, content):
 def download_file(file_name):
     sock.send(f"download {file_name}".encode('utf-8'))
     content = sock.recv(1024)
-    save_file(file_name, content)
+    save_file(file_name, content.decode())
 
 
 # Функция для чтения файла с клиента

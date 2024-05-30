@@ -101,7 +101,7 @@ while work:
         elif request.startswith("download"):
             file_name = request.split(maxsplit=1)[1]
             content = read_file(file_name)
-            client_socket.send(content)
+            client_socket.send(content.encode())
 
         elif request.startswith("upload"):
             file_name = request.split(maxsplit=1)[1]
